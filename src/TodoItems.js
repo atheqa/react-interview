@@ -3,10 +3,10 @@ import React from 'react'
 import Hello from './Hello';
 
 export const TodoItems = (props) => {
-    var retVal = [];
+    const retVal = [];
 
     for (let i = 0; i < props.todos.length; i++) {
-        var todo = props.todos[i];
+        const todo = props.todos[i];
         retVal.push(
             <Hello
                 key={todo.id}

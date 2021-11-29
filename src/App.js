@@ -4,25 +4,28 @@ import {Bar} from './Bar';
 import {TodoItems} from './TodoItems';
 
 const initTodos = [
-    {id: 1, name: 'Go to the supermarket', complete: false},
-    {id: 2, name: 'Call Alice', complete: false},
-    {id: 3, name: 'Ask Alice to call Bob', complete: false},
-    {id: 4, name: 'Do the dishes', complete: false},
-    {id: 5, name: 'Change car tyres', complete: false}
+    {id: 0, name: 'Go to the supermarket', complete: false},
+    {id: 1, name: 'Call Alice', complete: false},
+    {id: 2, name: 'Ask Alice to call Bob', complete: false},
+    {id: 3, name: 'Do the dishes', complete: false},
+    {id: 4, name: 'Change car tyres', complete: false}
 ];
 
-function App(props) {
+function App() {
     const [newTodoName, setNewTodoName] = useState('');
     const [todos, setTodos] = useState(initTodos);
+    const [id, setId] = useState(todos.length);
 
     const generateNewId = () => {
-        return todos.length + 1;
+        const newId = id + 1;
+        setId(newId);
+        return newId;
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
 
-        var newTodos = todos.slice();
+        const newTodos = todos.slice();
         newTodos.push({
             id: generateNewId(),
             name: newTodoName,
@@ -33,10 +36,10 @@ function App(props) {
     }
 
     const onClick = (id) => {
-        var todoItems = todos.slice();
+        const todoItems = todos.slice();
         for (let i = 0; i < todos.length; i++) {
             if (todoItems[i].id === id) {
-                var newComplete = !todoItems[i].complete;
+                const newComplete = !todoItems[i].complete;
                 todoItems[i].complete = newComplete;
             }
         }
@@ -47,24 +50,24 @@ function App(props) {
         setNewTodoName(event.target.value);
     }
     const onRemoveClick = (id) => {
-        //implement this logic
-        console.log('Remove Item!');
-    }
+        const newTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(newTodos);
+    };
 
-        return (
-            <div className="">
-                <TodoItems
-                    onClick={onClick}
-                    onRemoveClick={onRemoveClick}
-                    todos={todos}
-                />
-                <Bar
-                    newTodoName={newTodoName}
-                    onSubmit={onSubmit}
-                    onInputChange={onChange}
-                />
-            </div>
-        );
+    return (
+        <div className="">
+            <TodoItems
+                onClick={onClick}
+                onRemoveClick={onRemoveClick}
+                todos={todos}
+            />
+            <Bar
+                newTodoName={newTodoName}
+                onSubmit={onSubmit}
+                onInputChange={onChange}
+            />
+        </div>
+    );
 }
 
 export default App;
