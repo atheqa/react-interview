@@ -1,6 +1,5 @@
-//this was already an arrow function in original version
 import React from 'react'
-import Hello from './Hello';
+import Task from './Task';
 
 export const TodoItems = (props) => {
     const retVal = [];
@@ -8,7 +7,7 @@ export const TodoItems = (props) => {
     for (let i = 0; i < props.todos.length; i++) {
         const todo = props.todos[i];
         retVal.push(
-            <Hello
+            <Task
                 key={todo.id}
                 todo={todo}
                 onClick={props.onClick}

@@ -1,7 +1,7 @@
-//this makes the to-do change background color when the next button is clicked
+
 import React from 'react'
 
-export const Hello = (props) => {
+export const Task = (props) => {
 
     const values = (props.todo.complete ? 
         {color: 'lightgreen', text: 'Complete'}:
@@ -26,4 +26,4 @@ export const Hello = (props) => {
     );
 }
 
-export default Hello;
+export default Task;

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Bar} from './Bar';
+import {CreateTask} from './CreateTask';
 import {TodoItems} from './TodoItems';
 
 const initTodos = [
@@ -61,7 +61,7 @@ function App() {
                 onRemoveClick={onRemoveClick}
                 todos={todos}
             />
-            <Bar
+            <CreateTask
                 newTodoName={newTodoName}
                 onSubmit={onSubmit}
                 onInputChange={onChange}

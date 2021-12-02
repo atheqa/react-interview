@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-export const Bar = (props) => {
+export const CreateTask = (props) => {
     return (
         <form
             className="wrapper"
@@ -23,4 +23,4 @@ export const Bar = (props) => {
     );
 }
 
-export default Bar;
+export default CreateTask;
