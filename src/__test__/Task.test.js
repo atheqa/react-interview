@@ -19,7 +19,7 @@ describe("Task component tests", () => {
     afterEach(() => cleanup());
 
     test('remove button has correct text', () => {
-        const button = screen.getByText("Remove from list");
+        const button = screen.getByText("Remove");
         expect(button).toBeVisible();
     });
 
@@ -37,7 +37,7 @@ describe("Task component tests", () => {
         expect(completeButton).toBeVisible();
     });
 
-    test('should render same text passed into h3 task', async () => {
+    test('should find all buttons in the file', async () => {
         const buttonElement = screen.getAllByRole("button");
         expect(buttonElement[0]).toBeVisible();
     

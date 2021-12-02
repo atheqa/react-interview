@@ -1,28 +1,32 @@
-
 import React from 'react'
+import { Button, ButtonBox, TaskContainer, TextBox } from './task.styles';
 
 export const Task = (props) => {
 
     const values = (props.todo.complete ? 
-        {color: 'lightgreen', text: 'Complete'}:
-        {color: 'pink', text: 'Incomplete'});
+        {color: '#aef5b8', text: 'Complete'}:
+        {color: '#fcf6f5', text: 'Incomplete'});
         
     return (
-        <div className="wrapper" style={{backgroundColor: values.color}}>
-            <h3>{props.todo.name}</h3>
-            <button
-                className="btn"
-                onClick={() => props.onClick(props.todo.id)}>
-                {values.text}
-            </button>
-            <button
-                className="btn"
-                onClick={() =>
-                    props.onRemoveClick(props.todo.id)
-                }>
-                Remove from list
-            </button>
-        </div>
+        <TaskContainer style={{backgroundColor: values.color}}>
+            <TextBox><h3>{props.todo.name}</h3></TextBox>
+            <ButtonBox>
+                <Button
+                    className="btn"
+                    onClick={() => props.onClick(props.todo.id)}>
+                    {values.text}
+                </Button>
+            </ButtonBox>
+            <ButtonBox>
+                <Button
+                    className="btn"
+                    onClick={() =>
+                        props.onRemoveClick(props.todo.id)
+                    }>
+                    Remove
+                </Button>
+            </ButtonBox>
+        </TaskContainer>
     );
 }
 

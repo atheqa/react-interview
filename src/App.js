@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import './App.css';
+/* import './App.css'; */
 import {CreateTask} from './CreateTask';
 import {TodoItems} from './TodoItems';
+import {MainContainer} from './App.styles';
 
 const initTodos = [
     {id: 0, name: 'Go to the supermarket', complete: false},
@@ -55,6 +56,7 @@ function App() {
     };
 
     return (
+        <MainContainer>
         <div className="">
             <TodoItems
                 onClick={onClick}
@@ -67,6 +69,7 @@ function App() {
                 onInputChange={onChange}
             />
         </div>
+        </MainContainer>
     );
 }
 
