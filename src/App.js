@@ -57,7 +57,6 @@ function App() {
 
     return (
         <MainContainer>
-        <div className="">
             <TodoItems
                 onClick={onClick}
                 onRemoveClick={onRemoveClick}
@@ -68,7 +67,6 @@ function App() {
                 onSubmit={onSubmit}
                 onInputChange={onChange}
             />
-        </div>
         </MainContainer>
     );
 }

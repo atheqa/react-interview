@@ -12,14 +12,12 @@ export const Task = (props) => {
             <TextBox><h3>{props.todo.name}</h3></TextBox>
             <ButtonBox>
                 <Button
-                    className="btn"
                     onClick={() => props.onClick(props.todo.id)}>
                     {values.text}
                 </Button>
             </ButtonBox>
             <ButtonBox>
                 <Button
-                    className="btn"
                     onClick={() =>
                         props.onRemoveClick(props.todo.id)
                     }>

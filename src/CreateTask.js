@@ -11,7 +11,6 @@ export const CreateTask = (props) => {
                     onChange={props.onInputChange}
                 />
                 <Button
-                    className="btn btn-success"
                     type="submit"
                     value="Submit">
                     Submit
